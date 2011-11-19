@@ -7,7 +7,9 @@ Usage:
     run /dev/build/?flush=1
     visit your site config in the cms an populate the SMTP Account information
 
-Send an Email without a template: $mail = new SmtpEmail(); $mail->send('you@yourdomain.com', 'The Subject', 'The body'));
+Send an Email without a template:
+    $mail = new SmtpEmail();
+    $mail->send('you@yourdomain.com', 'The Subject', 'The body'));
 
 Send an Email using a silverstripe template: $mail = new SmtpEmail('MyMailTemplate'); $mail->send('you@yourdomain.com', 'The Subject'));
 
