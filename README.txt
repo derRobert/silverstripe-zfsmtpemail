@@ -1,0 +1,1 @@
+Silverstripe Module to send Emails via SMTP Auth/Server
