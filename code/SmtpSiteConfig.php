@@ -11,10 +11,6 @@
  */
 class SmtpSiteConfig extends DataObjectDecorator {
 
-        static $field_labels = array(
-            'NewRequestAutoReply' => 'Auto-Antwort bei neuer Anfrage'
-        );
-
 	function extraStatics() {
 		return array(
 			'db' => array(
@@ -29,13 +25,13 @@ class SmtpSiteConfig extends DataObjectDecorator {
 
         function  updateCMSFields(FieldSet &$fields) {
             $new_fields = new FieldSet(
-                    new TextField('SmtpHost', 'Host'),
-                    new TextField('SmtpUsername', 'Konto/Benutzername'),
+                    new TextField('SmtpHost', 'Server(e.g. mail.mydomain.com)'),
+                    new TextField('SmtpUsername', 'Account/Username'),
                     new TextField('SmtpPassword', 'Password'),
-                    new EmailField('FromEmail', 'Absender Email'),
-                    new TextField('FromName', 'Absender Name')
+                    new EmailField('FromEmail', 'Default sender email address'),
+                    new TextField('FromName', 'Default sender name')
                     );
-            $fields->addFieldsToTab('Root.Emailkonfiguration', $new_fields);
+            $fields->addFieldsToTab('Root.SmtpConfiguration', $new_fields);
             return $fields;
 
         }
